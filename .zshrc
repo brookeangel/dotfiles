@@ -82,3 +82,14 @@ export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 bindkey -me
+
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
+chruby ruby-2.2.3
+
+alias sane='stty sane'
+alias vim='nvim'
+alias ip="ipconfig getifaddr en0"
+alias gco="git checkout"
+alias inv="invoker start ~/Code/Procfile.brooke"
+alias "ggpush -f"="ggpush --force-with-lease"
