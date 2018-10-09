@@ -1,6 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/.local/bin:$PATH
 
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/brookeangel/.oh-my-zsh
 
