@@ -3,7 +3,7 @@
 " (1) Copy this file to ~/.config/nvim/init.vim
 
 " (2) Replace this with a path to brangelina on your machine.
-source ~/Code/brangelina/brangelina.vim
+source ~/brangelina/brangelina.vim
 
 " remove me if ale stops being a butthead
 " let g:ale_linters = { 'elm': [] }
@@ -25,8 +25,8 @@ set background=dark
 let g:neoterm_shell = 'zsh'
 
 " So we don't accidentally delete ruby files
-let g:neoformat_enabled_ruby=[]
-let g:neoformat_enabled_sass=[]
+" let g:neoformat_enabled_ruby=[]
+" let g:neoformat_enabled_sass=[]
 let g:neoformat_enabled_json=[]
 
 " (5) Enjoy using branglina.vim. Issues and pull requests are welcome!
