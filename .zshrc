@@ -80,19 +80,18 @@ source $ZSH/oh-my-zsh.sh
 
 # This allows use of meta key (I set alt)
 
-# Set nvim as default editor
-export VISUAL=nvim
+# Set vim as default editor
+export VISUAL=vim
 export EDITOR="$VISUAL"
 
-bindkey -me
+# bindkey -me
 
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
-chruby ruby-2.2.3
+# TODO: comment this back in if you decide to use chruby and not nix
+# source /usr/local/opt/chruby/share/chruby/chruby.sh
+# source /usr/local/opt/chruby/share/chruby/auto.sh
+# chruby ruby-2.2.3
 
 alias sane='stty sane'
-alias vim='nvim'
 alias ip="ipconfig getifaddr en0"
 alias gco="git checkout"
-alias inv="invoker start ~/Code/Procfile.brooke"
 alias "ggpush -f"="ggpush --force-with-lease"
