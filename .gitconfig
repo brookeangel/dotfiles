@@ -1,0 +1,7 @@
+[user]
+	name = Brooke Angel
+	email = brooke.nicole.angel@gmail.com
+	username = brookeangel
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore 
