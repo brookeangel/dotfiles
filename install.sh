@@ -24,4 +24,19 @@ for file in .*; do
   ln -s ~/dotfiles/homedir/$file ~/$file
 done
 
+cd ..
+
+# Configure Brangelina
+echo "Configuring vim with celebrity powerhouse couple brangelina..."
+
+# TODO: Add VimPlug installation here
+
+BRANGELINA_CONFIG=~/dotfiles/brangelina/init.example.vim
+VIM_CONFIG=~/init.vim
+echo "Linking $BRANGELINA_CONFIG to $VIM_CONFIG..."
+
+# symlink might alraedy exist
+unlink ~/$VIM_CONFIG > /dev/null 2>&1
+ln -s BRANGELINA_CONFIG $VIM_CONFIG
+
 echo "Yayyy! Everything looking groovy."

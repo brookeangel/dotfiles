@@ -17,3 +17,8 @@ Stuff Brooke typically needs when setting up her environment.
 - [ ] Get omzsh: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ` 
 - [ ] Update keyboard settings
+- [ ] Install dotfiles: `./install.sh`
+- [ ] Install VimPlug: https://github.com/junegunn/vim-plug#installation
+
+## To do:
+- [ ] Move installation of VimPlug to install script
