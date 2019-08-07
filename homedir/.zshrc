@@ -95,3 +95,5 @@ alias sane='stty sane'
 alias ip="ipconfig getifaddr en0"
 alias gco="git checkout"
 alias "ggpush -f"="ggpush --force-with-lease"
+export PATH="/usr/local/opt/erlang@20/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/erlang@20/lib"
