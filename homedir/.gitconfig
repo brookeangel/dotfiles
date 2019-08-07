@@ -1,7 +1,19 @@
 [user]
-	name = Brooke Angel
+	name = brookeangel
 	email = brooke.nicole.angel@gmail.com
 	username = brookeangel
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore 
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[merge]
+	tool = p4mergetool
+[mergetool "p4mergetool"]
+	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $PWD/$BASE $PWD/$REMOTE $PWD/$LOCAL $PWD/$MERGED
+	trustExitCode = false
+[rebase]
+	autosquash = true
