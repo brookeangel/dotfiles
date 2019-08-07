@@ -85,7 +85,7 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 
 # bindkey -me
-
+eval "$(direnv hook zsh)"
 # TODO: comment this back in if you decide to use chruby and not nix
 # source /usr/local/opt/chruby/share/chruby/chruby.sh
 # source /usr/local/opt/chruby/share/chruby/auto.sh
