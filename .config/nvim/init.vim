@@ -13,6 +13,7 @@ call plug#begin('~/.vim/plugged')
   " (3) Add your custom plugins below.
   Plug 'iCyMind/NeoSolarized'
   Plug 'christoomey/vim-tmux-navigator'
+  Plug 'elmcast/elm-vim'
 call plug#end()
 
 " Disable ^h backspace remapping for vim-tmux-navigator
@@ -28,6 +29,8 @@ let g:neoterm_shell = 'zsh'
 " let g:neoformat_enabled_ruby=[]
 " let g:neoformat_enabled_sass=[]
 let g:neoformat_enabled_json=[]
+
+let g:elm_format_autosave = 1
 
 " (5) Enjoy using branglina.vim. Issues and pull requests are welcome!
 " For everything else, use a tab width of 4 space chars.
