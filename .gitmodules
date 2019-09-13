@@ -1,3 +1,3 @@
-[submodule "brangelina"]
-	path = brangelina
-	url = https://github.com/brookeangel/brangelina
+[submodule "whimsical-vim"]
+	path = whimsical-vim
+	url = https://github.com/whimsical-vim/whimsical-vim
