@@ -86,7 +86,7 @@ export EDITOR="$VISUAL"
 
 # bindkey -me
 eval "$(direnv hook zsh)"
-# TODO: comment this back in if you decide to use chruby and not nix
+# Comment this back in if you decide to use chruby and not nix
 # source /usr/local/opt/chruby/share/chruby/chruby.sh
 # source /usr/local/opt/chruby/share/chruby/auto.sh
 # chruby ruby-2.2.3
@@ -96,3 +96,5 @@ alias ip="ipconfig getifaddr en0"
 alias gco="git checkout"
 alias "ggpush -f"="ggpush --force-with-lease"
 alias actsudo="aws-vault exec sudo --"
+# Get nix first: https://nixos.org/nix/
+source ~/.nix-profile/etc/profile.d/nix.sh
