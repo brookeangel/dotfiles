@@ -3,44 +3,33 @@
 " (1) Copy this file to ~/.config/nvim/init.vim
 
 " (2) Replace this with a path to brangelina on your machine.
-source ~/brangelina/brangelina.vim
+source ~/dotfiles/whimsical-vim/whimsical.vim
 
-" remove me if ale stops being a butthead
-" let g:ale_linters = { 'elm': [] }
-
-call plug#begin('~/.vim/plugged')
-  call BrangelinaPlugins()
+call plug#begin('~/.local/share/nvim/plugged')
+  call WhimsicalPlugins()
   " (3) Add your custom plugins below.
-  Plug 'iCyMind/NeoSolarized'
+  Plug 'lifepillar/vim-solarized8'
   Plug 'christoomey/vim-tmux-navigator'
-  Plug 'elmcast/elm-vim'
+  Plug 'tpope/vim-fireplace'
+  ""Plug 'rking/ag'
+  Plug 'venantius/vim-cljfmt'
+  Plug 'itchyny/lightline.vim'
+  Plug 'ElmCast/elm-vim'
 call plug#end()
 
-" Disable ^h backspace remapping for vim-tmux-navigator
-nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
-
 " (4) Configure the theme you want to use below.
-colorscheme NeoSolarized
-let g:lightline = { 'colorscheme': 'solarized' }
+" let g:lightline = { 'colorscheme': 'solarized' }
+let g:solarized_use16 = 1
 set background=dark
+colorscheme solarized8
 let g:neoterm_shell = 'zsh'
-
-" So we don't accidentally delete ruby files
-" let g:neoformat_enabled_ruby=[]
-" let g:neoformat_enabled_sass=[]
-let g:neoformat_enabled_json=[]
-
 let g:elm_format_autosave = 1
+let g:neoformat_enabled_json = []
 
-" (5) Enjoy using branglina.vim. Issues and pull requests are welcome!
-" For everything else, use a tab width of 4 space chars.
-set tabstop=2       " The width of a TAB is set to 2.
-                    " Still it is a \t. It is just that
-                    " Vim will interpret it to be having
-                    " a width of 2.
-set shiftwidth=2    " Indents will have a width of 2.
-set softtabstop=2   " Sets the number of columns for a TAB.
-set expandtab       " Expand TABs to spaces.
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
-autocmd Filetype json setlocal ts=2 sts=2 sw=2
+" whitespace
+set listchars=tab:»\ ,eol:¬
+set list
+let g:indentLine_char = '·'
+let g:indentLine_enabled = 1
+
+" (5) Enjoy using whimsical-vim.vim. Issues and pull requests are welcome!
