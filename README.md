@@ -21,3 +21,4 @@ Stuff Brooke typically needs when setting up her environment.
 - [ ] Install VimPlug: https://github.com/junegunn/vim-plug#installation
 - [ ] Install nix: https://nixos.org/nix/
 - [ ] Install elm things: `npm install -g elm elm-test elm-format @elm-tooling/elm-language-server` - consider moving this to nix?
+- [ ] Install similar-sort: https://git.bytes.zone/brian/dotfiles.nix/src/branch/main/pkgs/similar-sort (`nix-env -if .`)

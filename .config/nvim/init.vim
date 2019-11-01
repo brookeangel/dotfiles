@@ -38,7 +38,13 @@ nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
 " # FZF stuff
 let g:fzf_layout = { 'window': 'enew' }
 " I removed an mN before each of these, not sure what that means
-nnoremap <C-P> :Files<cr>
+" bindings for fuzzy-finding
+nnoremap <silent> <C-P> :call fzf#run(fzf#wrap({
+  \ "source": "git ls-files --others --cached --exclude-standard \| similar-sort " . @%,
+  \ "sink": "edit",
+  \ "options": "--tiebreak index"
+  \ }))<CR>
+
 nnoremap <C-F> :GFiles<cr>
 nnoremap <C-B> :Buffers<CR>
 nnoremap <C-/> :Lines<cr>
