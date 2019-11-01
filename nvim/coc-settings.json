@@ -1,0 +1,17 @@
+{
+  "languageserver": {
+    "elmLS": {
+      "command": "elm-language-server",
+      "args": ["--stdio"],
+      "filetypes": ["elm"],
+      "rootPatterns": ["elm.json"],
+      "initializationOptions": {
+        "elmAnalyseTrigger": "never"
+      }
+    },
+  },
+  "solargraph.useBundler": true,
+  "solargraph.diagnostics": true,
+  "codeLens.enable": true,
+  "coc.preferences.formatOnSaveFiletypes": ["elm"]
+}
