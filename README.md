@@ -20,6 +20,4 @@ Stuff Brooke typically needs when setting up her environment.
 - [ ] Install dotfiles: `./install.sh`
 - [ ] Install VimPlug: https://github.com/junegunn/vim-plug#installation
 - [ ] Install nix: https://nixos.org/nix/
-
-## To do:
-- [ ] Move installation of VimPlug to install script
+- [ ] Install elm things: `npm install -g elm elm-test elm-format @elm-tooling/elm-language-server` - consider moving this to nix?
