@@ -10,8 +10,9 @@
       }
     },
   },
-  "solargraph.useBundler": true,
   "solargraph.diagnostics": true,
+  "solargraph.useBundler": true,
+  "solargraph.bundlerPath": "/Users/brookeangel/NoRedInk/NoRedInk.nix2/bin/bundle",
   "codeLens.enable": true,
   "coc.preferences.formatOnSaveFiletypes": ["elm"]
 }
