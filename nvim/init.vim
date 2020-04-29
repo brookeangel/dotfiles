@@ -29,13 +29,6 @@ set nowritebackup " Better display for messages
 set cmdheight=2 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
 
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-" Using CocList
-" Show all diagnostics
-nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
-
 " # FZF stuff
 let g:fzf_layout = { 'window': 'enew' }
 " bindings for fuzzy-finding
@@ -62,7 +55,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'christoomey/vim-tmux-navigator'  " Smoothly navigate between tmux windows
   Plug 'tpope/vim-commentary' "  (Un)commenting lines
   Plug 'itchyny/lightline.vim' " bottom status thing
-  Plug 'neoclide/coc.nvim', {'branch': 'release'} " Language server managements
+  Plug 'maximbaz/lightline-ale' " integrate lightline with Ale
   Plug 'machakann/vim-highlightedyank' "  Highlight copying
   Plug 'sbdchd/neoformat'
   Plug 'tpope/vim-fugitive'                  "  GIT integration
@@ -75,6 +68,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'jreybert/vimagit' " Git, supposedly
   Plug 'tpope/vim-vinegar' "  press - to see directories
   Plug 'tpope/vim-unimpaired' "  paste on line below
+  Plug 'dense-analysis/ale' " linting, correcting, etc.
+  Plug 'mileszs/ack.vim' " Search for stuff
 call plug#end()
 
 " (4) Configure the theme you want to use below.
@@ -106,5 +101,27 @@ let g:startify_session_delete_buffers = 1
 " I copied this in from whimsical but idk what this does
 let g:mapleader=' '
 let g:maplocalleader='\'
-let g:coc_global_extensions = ['coc-solargraph']
 
+" Ale
+let g:ale_linters = { 'javascript': ['eslint'] }
+
+" Lightline-Ale Integration
+let g:lightline = {}
+
+let g:lightline.component_expand = {
+      \  'linter_checking': 'lightline#ale#checking',
+      \  'linter_infos': 'lightline#ale#infos',
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \  'linter_ok': 'lightline#ale#ok',
+      \ }
+
+let g:lightline.component_type = {
+      \     'linter_checking': 'right',
+      \     'linter_infos': 'right',
+      \     'linter_warnings': 'warning',
+      \     'linter_errors': 'error',
+      \     'linter_ok': 'right',
+      \ }
+
+let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ]] }
