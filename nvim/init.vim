@@ -8,7 +8,6 @@ syntax on
 set tabstop=2 shiftwidth=2 expandtab
 set shiftround " for line shifting
 set termguicolors " have some ok colors
-let &showbreak = '↪ '
 set clipboard^=unnamed,unnamedplus
 set shell=/bin/bash " required by gitgutter plugin
 set updatetime=100  " ensures gitgutter updates every 100ms
@@ -20,6 +19,8 @@ set splitright " slightly more intuitive buffer splits
 set undodir=~/tmp/vim/undo " save butt if laptop crashes
 set undofile " ditto save butt
 set wildignorecase " ignore case when searching files + dir
+set noswapfile " no swapfiles!
+let &showbreak = '↪ '
 
 " CoC
 " Some servers have issues with backup files, see #649
@@ -37,18 +38,12 @@ nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
 
 " # FZF stuff
 let g:fzf_layout = { 'window': 'enew' }
-" I removed an mN before each of these, not sure what that means
 " bindings for fuzzy-finding
-nnoremap <silent> <C-P> :call fzf#run(fzf#wrap({
-  \ "source": "git ls-files --others --cached --exclude-standard \| similar-sort " . @%,
-  \ "sink": "edit",
-  \ "options": "--tiebreak index"
-  \ }))<CR>
+nnoremap <silent> <C-P> :Files<cr>
+nnoremap <silent> <C-F> :GFiles<cr>
+nnoremap <silent> <C-B> :Buffers<CR>
+nnoremap <silent> <C-/> :Lines<cr>
 
-nnoremap <C-F> :GFiles<cr>
-nnoremap <C-B> :Buffers<CR>
-nnoremap <C-/> :Lines<cr>
-" For these I did not remove mN - what is it?
 nnoremap <leader><leader> mN:Commands<cr>
 nnoremap <leader>/ mN:History/<cr>
 nnoremap <leader>: mN:History:<cr>
@@ -66,9 +61,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'lifepillar/vim-solarized8'
   Plug 'christoomey/vim-tmux-navigator'  " Smoothly navigate between tmux windows
   Plug 'tpope/vim-commentary' "  (Un)commenting lines
-  Plug 'tpope/vim-fireplace'
-  Plug 'venantius/vim-cljfmt'
-  Plug 'itchyny/lightline.vim'
+  Plug 'itchyny/lightline.vim' " bottom status thing
   Plug 'neoclide/coc.nvim', {'branch': 'release'} " Language server managements
   Plug 'machakann/vim-highlightedyank' "  Highlight copying
   Plug 'sbdchd/neoformat'
